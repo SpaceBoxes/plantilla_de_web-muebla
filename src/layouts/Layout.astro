@@ -1,32 +1,32 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 const { title } = Astro.props;
 // Supports weights 100-900
-import '@fontsource-variable/raleway';
+import "@fontsource-variable/raleway";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		
-	}
-	body {
-		font-family: 'Raleway Variable', sans-serif;
-		font-weight: 400;
-	}
+  :root {
+  }
+  body {
+    font-family: "Raleway Variable", sans-serif;
+    font-weight: 400;
+    background-color: #272e47;
+  }
 </style>
