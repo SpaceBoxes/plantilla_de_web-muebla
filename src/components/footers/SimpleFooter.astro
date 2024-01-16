@@ -1,0 +1,41 @@
+---
+interface Porps {
+  brand?: string;
+  description?: string;
+  email?: string;
+  cellphone?: string;
+  cellphone2?: string;
+}
+//icons
+import Facebook from "../icons/Facebook.astro";
+import Instagram from "../icons/Instagram.astro";
+import Whatsapp from "../icons/Whatsapp.astro";
+
+const { brand, description, email, cellphone, cellphone2 } = Astro.props;
+---
+
+<footer class="bg-blue-900 flex justify-between items-center flex-wrap p-20">
+  <section class="flex flex-col justify-start items-start w-3/6 py-10 px-10">
+    <div class="flex justify-start items-start w-full">
+      <slot name="icon" />
+      <h1 class="text-5xl text-brown-700 pl-8">{brand}</h1>
+    </div>
+    <p class="text-brown-300">
+      {description}
+    </p>
+    <h2 class="text-3xl text-brown-700 mt-7">Siguenos</h2>
+    <div class="flex gap-7 mt-5">
+      <Facebook w="2vw" c="fill-brown-500" />
+      <Instagram w="2vw" c="fill-brown-500" />
+      <Whatsapp w="2vw" c="fill-brown-500" />
+    </div>
+  </section>
+  <section class="flex flex-col justify-start items-start w-2/6 py-10 px-10">
+    <h2 class="text-3xl text-brown-700">Contactanos</h2>
+    <h3 class="text-xl text-brown-500 pt-4">Correo</h3>
+    <p class="text-xl text-brown-100">{email}</p>
+    <h3 class="text-xl text-brown-500 pt-4">Teléfonos</h3>
+    <p class="text-xl text-brown-100">{cellphone}</p>
+    <p class="text-xl text-brown-100">{cellphone2}</p>
+  </section>
+</footer>

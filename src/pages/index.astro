@@ -1,29 +1,160 @@
 ---
+//layouts
 import Layout from "../layouts/Layout.astro";
+//icons
 import Couch from "../components/icons/Couch.astro";
+import Plane from "../components/icons/Plane.astro";
+//menu
+import SimpleMenu from "../components/menus/SimpleMenu.astro";
+//asrticles
+import SimpleArticle from "../components/cards/SimpleArticle.astro";
+//footer
+import SimpleFooter from "../components/footers/SimpleFooter.astro";
 ---
 
 <Layout title="Muebla">
-  <main class="page">
-    <nav class="flex justify-between items-center px-20 mt-5">
-      <div class="flex justify-start items-center">
-        <div class="flex justify-center items-center pr-8 relative top-1">
-          <Couch w="75" c="#000" />
+  <section class="bg-blue-800 w-full">
+    <header class="w-full bg-[url('public/img/web_banner.jpg')] bg-left-bottom">
+      <section
+        class="flex justify-center items-center flex-wrap pt-14 bg-[--bg-effect]"
+      >
+        <SimpleMenu title="Muebla">
+          <Couch w="4vw" c="fill-blue-100" slot="icon" />
+        </SimpleMenu>
+        <section
+          class="flex flex-wrap justify-center items-center py-80 w-8/12"
+        >
+          <h1 class="text-7xl text-center text-blue-100">
+            Todo para interiores disponibles en nuestra tienda
+          </h1>
+          <h2
+            class="text-2xl text-center text-blue-800 mt-10 py-3 px-10 rounded-md font-semibold bg-brown-500"
+          >
+            Los mejores
+          </h2>
+        </section>
+      </section>
+    </header>
+    <main class="flex flex-wrap justify-center items-center p-20">
+      <h1 class="text-7xl text-blue-100 font-medium w-full mt-20 mb-10">
+        Muebles destacados
+      </h1>
+      <section class="flex flex-wrap justify-between items-center w-11/12">
+        <SimpleArticle
+          title="Sofá verde elegante"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        >
+          <img src="public/mean/couch.png" alt="couch-image" slot="img" />
+        </SimpleArticle>
+        <SimpleArticle
+          title="Sillon azul elegante"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        >
+          <img
+            class="relative right-8 scale-125"
+            src="public/mean/armchair.png"
+            alt="armchair-image"
+            slot="img"
+          />
+        </SimpleArticle>
+        <SimpleArticle
+          title="Maceta sencilla"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        >
+          <img
+            class="scale-150"
+            src="public/mean/pots.png"
+            alt="armchair-image"
+            slot="img"
+          />
+        </SimpleArticle>
+      </section>
+      <h1 class="text-7xl text-blue-100 font-medium w-full mt-36 mb-36">
+        Nuestra tienda
+      </h1>
+      <section class="flex flex-wrap justify-between items-center w-full">
+        <div class="w-7/12">
+          <img
+            src="/public/img/demostration.jpg"
+            alt="imagen de una sala"
+            class="scale-110 origin-right"
+          />
         </div>
-        <h1 class="text-5xl font-medium">Muebla</h1>
-      </div>
-      <div class="flex justify-start items-center">
-        <a href="#" class="text-2xl mx-4">Muebles</a>
-        <a href="#" class="text-2xl mx-4">Tienda</a>
-        <a href="#" class="text-2xl mx-4">Envios</a>
-        <a href="#" class="text-2xl mx-4">Acerca de</a>
-      </div>
-    </nav>
-  </main>
+        <div class="flex flex-col p-20 w-5/12 p-">
+          <h2 class="text-4xl text-brown-500 font-medium w-full">
+            Tenemos toda la variedad de muebles que necesitas
+          </h2>
+          <p class="text-left text-lg text-blue-100 mt-5">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora
+            quia labore, blanditiis dolorum hic deleniti. Deleniti consequatur
+            recusandae illum repellendus, asperiores, nihil error nobis quas
+            impedit laudantium facilis quam blanditiis!
+          </p>
+        </div>
+      </section>
+      <h1 class="text-7xl text-blue-100 font-medium w-full mt-36 mb-36">
+        Envíos
+      </h1>
+      <section class="flex flex-wrap justify-between items-center w-full">
+        <div class="flex justify-start items-start flex-col p-20 w-3/6 p-">
+          <h2 class="text-4xl text-brown-500 font-medium w-full">
+            Realizamos envíos a toda Nicaragua
+          </h2>
+          <p class="text-left text-lg text-blue-100 mt-5">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora
+            quia labore, blanditiis dolorum hic deleniti. Deleniti consequatur
+            recusandae illum repellendus, asperiores, nihil error nobis quas
+            impedit laudantium facilis quam blanditiis!
+          </p>
+        </div>
+        <div class="flex justify-center items-center w-3/6">
+          <Plane
+            w="7vw"
+            c="fill-brown-500 scale-[2.0] rotate-45 -translate-y-5"
+          />
+        </div>
+      </section>
+    </main>
+    <SimpleFooter
+      brand="Muebla"
+      description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod deleniti voluptatem unde molestiae dolore voluptatum?"
+      email="mueblastore@gmail.com"
+      cellphone="+505 6943 2092"
+      cellphone2="+505 3210 5103"
+    >
+      <Couch w="4vw" c="fill-brown-700 relative bottom-4" slot="icon" />
+    </SimpleFooter>
+    <!-- <footer
+      class="bg-blue-900 flex justify-between items-center flex-wrap p-20"
+    >
+      <section
+        class="flex flex-col justify-start items-start w-3/6 py-10 px-10"
+      >
+        <div class="flex justify-start items-start w-full">
+          <Couch w="4vw" c="fill-brown-700 relative bottom-4" slot="icon" />
+          <h1 class="text-5xl text-brown-700 pl-8">Muebla</h1>
+        </div>
+        <p class="text-brown-300">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod
+          deleniti voluptatem unde molestiae dolore voluptatum?
+        </p>
+        <h2 class="text-3xl text-brown-700 mt-7">Siguenos</h2>
+        <div class="flex gap-7 mt-5">
+          <Facebook w="2vw" c="fill-brown-500" />
+          <Instagram w="2vw" c="fill-brown-500" />
+          <Whatsapp w="2vw" c="fill-brown-500" />
+        </div>
+      </section>
+      <section
+        class="flex flex-col justify-start items-start w-2/6 py-10 px-10"
+      >
+        <h2 class="text-3xl text-brown-700">Contactanos</h2>
+        <h3 class="text-xl text-brown-500 pt-4">Correo</h3>
+        <p class="text-xl text-brown-100">correodeejemplo@gmail.com</p>
+        <h3 class="text-xl text-brown-500 pt-4">Teléfonos</h3>
+        <p class="text-xl text-brown-100">+505 4382 3927</p>
+        <p class="text-xl text-brown-100">+505 3490 8943</p>
+      </section>
+    </footer> -->
+  </section>
 </Layout>
-
-<style>
-  .page {
-    background-image:
-  }
-</style>

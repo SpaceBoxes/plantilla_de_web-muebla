@@ -22,11 +22,37 @@ import "@fontsource-variable/raleway";
   </body>
 </html>
 <style is:global>
+  /* Colors
+  --bg: #272e47;
+  --accent: #d4c3a8; */
   :root {
+    --bg-effect: rgba(39, 46, 71, 0.85);
+  }
+  * {
+    box-sizing: border-box;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    scroll-behavior: smooth;
   }
   body {
+    min-height: 100vh;
+    min-height: 100dvh;
     font-family: "Raleway Variable", sans-serif;
     font-weight: 400;
-    background-color: #272e47;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+    hyphens: auto;
   }
 </style>
