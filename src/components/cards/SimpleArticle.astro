@@ -1,22 +1,35 @@
 ---
 interface Props {
+  id?: string;
   title?: string;
   description?: string;
 }
 
-const { title, description } = Astro.props;
+const { id, title, description } = Astro.props;
 ---
 
-<article class="w-3/12 flex flex-wrap justify-center items-center">
-  <div class="flex justify-center items-center">
-    <slot name="img" />
+<article
+  id={id}
+  class="w-full mb-20 md:mb-0 md:w-5/12 lg:w-3/12 flex flex-wrap justify-center items-center"
+>
+  <div
+    class="z-0 hover:scale-110 flex justify-center items-center relative transition-transform duration-700 easy-ouy before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-blue-600 before:opacity-0 before:transition-opacity before:duration-700 before:easy-in-out before:blur-3xl hover:before:opacity-50"
+  >
+    <div class="w-full scale-110 md:scale-100 z-10">
+      <slot name="img" />
+    </div>
   </div>
   <div class="flex flex-wrap justify-center items-center">
     <h1 class="text-center text-4xl text-brown-500 font-medium w-full">
       {title}
     </h1>
-    <p class="text-left text-lg text-blue-100 mt-5">
+    <p class="text-left text-lg text-blue-100 mt-5 hidden sm:block">
       {description}
     </p>
   </div>
 </article>
+
+<style scoped>
+  .tohover:hover a {
+  }
+</style>

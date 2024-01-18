@@ -1,27 +1,34 @@
 ---
 interface Props {
+  id?: string;
   title?: string;
+  links?: string[];
+  anchors?: string[];
 }
-const { title } = Astro.props;
+const { id, title, anchors, links } = Astro.props;
 ---
 
-<nav class="flex justify-between items-center px-20 w-full">
+<nav id={id} class="flex justify-between items-center px-20 w-full">
   <div class="flex justify-start items-center">
     <div class="flex justify-center items-center pr-8">
       <slot name="icon" />
     </div>
     <h1 class="text-4xl text-blue-100 font-medium">{title}</h1>
   </div>
-  <div>
-    <ul class="flex justify-start items-center">
-      <li>
-        <a href="#" class="text-2xl text-blue-100 mx-4">Muebles</a>
-      </li>
-      <li><a href="#" class="text-2xl text-blue-100 mx-4">Tienda</a></li>
-      <li><a href="#" class="text-2xl text-blue-100 mx-4">Envios</a></li>
-      <li>
-        <a href="#" class="text-2xl text-blue-100 mx-4">Acerca de</a>
-      </li>
+  <div class="w-3/6">
+    <ul class="flex justify-between items-center">
+      {
+        anchors
+          ? anchors.map((item, index) => (
+              <a
+                href={links ? links[index] : "#"}
+                class="text-2xl text-blue-100 hover:text-blue-400 p-2 transition-all ese-out"
+              >
+                {item}
+              </a>
+            ))
+          : null
+      }
     </ul>
   </div>
 </nav>

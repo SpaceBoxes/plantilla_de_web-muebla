@@ -1,14 +1,13 @@
 ---
 interface Props {
-  w?: string;
+  id?: string;
   c?: string;
 }
-const { w, c } = Astro.props;
+const { id, c } = Astro.props;
 ---
 
 <svg
-  width={w}
-  height={w}
+  id={id}
   class={c}
   viewBox="0 0 17.019309 17.005114"
   version="1.1"

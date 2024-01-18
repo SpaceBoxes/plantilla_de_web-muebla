@@ -1,5 +1,6 @@
 ---
 interface Porps {
+  id?: string;
   brand?: string;
   description?: string;
   email?: string;
@@ -11,26 +12,41 @@ import Facebook from "../icons/Facebook.astro";
 import Instagram from "../icons/Instagram.astro";
 import Whatsapp from "../icons/Whatsapp.astro";
 
-const { brand, description, email, cellphone, cellphone2 } = Astro.props;
+const { id, brand, description, email, cellphone, cellphone2 } = Astro.props;
 ---
 
-<footer class="bg-blue-900 flex justify-between items-center flex-wrap p-20">
-  <section class="flex flex-col justify-start items-start w-3/6 py-10 px-10">
-    <div class="flex justify-start items-start w-full">
+<footer
+  id={id}
+  class="bg-blue-900 flex justify-between items-center flex-wrap p-5 md:p-20"
+>
+  <section
+    class="flex flex-col justify-start items-start w-full xl:w-3/6 py-10 px-10"
+  >
+    <div
+      class="flex justify-start items-center md:items-start flex-wrap md:flex-nowrap w-full"
+    >
       <slot name="icon" />
-      <h1 class="text-5xl text-brown-700 pl-8">{brand}</h1>
+      <h1 class="text-5xl text-brown-700 ml-8">{brand}</h1>
     </div>
-    <p class="text-brown-300">
+    <p class="text-brown-300 pt-5">
       {description}
     </p>
     <h2 class="text-3xl text-brown-700 mt-7">Siguenos</h2>
     <div class="flex gap-7 mt-5">
-      <Facebook w="2vw" c="fill-brown-500" />
-      <Instagram w="2vw" c="fill-brown-500" />
-      <Whatsapp w="2vw" c="fill-brown-500" />
+      <Facebook
+        c="fill-brown-500 hover:fill-brown-700 w-10 hover:scale-95 transition duration-200 easy-out  hover:cursor-pointer "
+      />
+      <Instagram
+        c="fill-brown-500 hover:fill-brown-700 w-10 hover:scale-95 transition duration-200 easy-out  hover:cursor-pointer "
+      />
+      <Whatsapp
+        c="fill-brown-500 hover:fill-brown-700 w-10 hover:scale-95 transition duration-200 easy-out  hover:cursor-pointer "
+      />
     </div>
   </section>
-  <section class="flex flex-col justify-start items-start w-2/6 py-10 px-10">
+  <section
+    class="flex flex-col justify-start items-start w-full xl:w-2/6 py-10 px-10"
+  >
     <h2 class="text-3xl text-brown-700">Contactanos</h2>
     <h3 class="text-xl text-brown-500 pt-4">Correo</h3>
     <p class="text-xl text-brown-100">{email}</p>
